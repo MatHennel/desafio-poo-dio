@@ -12,11 +12,16 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class Bootcamp {
     private String name;
     private String description;
     private final LocalDate initialDate = LocalDate.now();
     private final LocalDate finalDate = initialDate.plusDays(45);
+
+    @Builder.Default
     private Set<Dev> subscribedDevs = new HashSet<>();
+
+    @Builder.Default
     private Set<Content> contents = new LinkedHashSet<>();
 }

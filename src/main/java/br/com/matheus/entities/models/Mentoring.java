@@ -9,7 +9,6 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @SuperBuilder
-@ToString(callSuper = true)
 public class Mentoring extends Content{
 
 
@@ -18,5 +17,14 @@ public class Mentoring extends Content{
     @Override
     public double xpCalculation() {
         return PATTERN_XP + 200;
+    }
+
+    @Override
+    public String toString() {
+        return "\n\tMentoring{" +
+                "\n\t\ttitle=" + getTitle() +
+                "\n\t\tdescruption=" + getDescription() +
+                "\n\t\tdate=" + date +
+                "\n\t} ";
     }
 }

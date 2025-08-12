@@ -5,7 +5,6 @@ import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @SuperBuilder
 public abstract class Content {
 

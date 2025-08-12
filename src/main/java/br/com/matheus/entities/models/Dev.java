@@ -12,9 +12,14 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
+@Builder
 public class Dev {
     private String name;
+
+    @Builder.Default
     private Set<Content> subscribedContent = new LinkedHashSet<>();
+
+    @Builder.Default
     private Set<Content> completedContents = new LinkedHashSet<>();
 
     public void registerBootcamp(Bootcamp bootcamp){

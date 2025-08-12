@@ -7,7 +7,6 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-@ToString(callSuper = true)
 public class Course extends Content{
 
 
@@ -16,5 +15,14 @@ public class Course extends Content{
     @Override
     public double xpCalculation() {
         return PATTERN_XP * workload;
+    }
+
+    @Override
+    public String toString() {
+        return "\n\tCourse{" +
+                "\n\t\ttitle=" + getTitle() +
+                "\n\t\tdescruption=" + getDescription() +
+                "\n\t\tworkload=" + workload +
+                "\n\t} ";
     }
 }
