@@ -1,16 +1,20 @@
 package br.com.matheus.entities.models;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
+@SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class Course {
+@ToString(callSuper = true)
+public class Course extends Content{
 
-    private String titulo;
-    private String descricao;
-    private int cargaHoraria;
 
+    private int workload;
+
+    @Override
+    public double xpCalculation() {
+        return PATTERN_XP * workload;
+    }
 }
